@@ -12,16 +12,18 @@ public class SessionUtil {
 	private static SessionFactory sessionFactory;
 
 	static {
+
 		StandardServiceRegistry standardRegistry =
 				new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
-		Metadata metaData = 
+		Metadata metaData =
 				new MetadataSources(standardRegistry).getMetadataBuilder().build();
-		sessionFactory = metaData.getSessionFactoryBuilder().build();
-	}
+		sessionFactory =
+				metaData.getSessionFactoryBuilder().build();
 
+	}
 	public static Session getSession(){
 		return sessionFactory.openSession();
-	}
 
+	}
 }
 

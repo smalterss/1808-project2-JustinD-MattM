@@ -4,16 +4,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.springframework.org/schema/beans">
 	
-	<bean autowire="byType" scope="prototype"
-		class="com.revature.pojos.User" id="userId">
+	<bean id="user" class="com.revature.pojos.User"></bean>
+	
+	<bean id="userService" class="com.revature.services.UserService"></bean>
 
-		<!-- <property name="wall" ref="wall"/> -->
-	</bean>
-
-	<bean scope="prototype" class="com.revature.pojo.WallImpl"
-		id="wall">
-		<property value="pickles" name="material" />
-	</bean>
-
-	<!-- <bean id="brokenWall" class="com.revature.pojo.BrokenWall" scope="singleton"/> -->
 </beans>

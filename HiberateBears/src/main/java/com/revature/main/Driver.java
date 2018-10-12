@@ -1,19 +1,22 @@
 package com.revature.main;
 
 import java.util.List;
+import java.util.Scanner;
 
 import org.hibernate.Criteria;
-import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 
 import com.revature.entities.Bear;
+import com.revature.entities.Cave;
+import com.revature.entities.HoneyPot;
 import com.revature.util.SessionUtil;
 
 public class Driver {
 
 	public static void main(String[] args) {
-		/*Session sess = SessionUtil.getSession();
+		Session sess = SessionUtil.getSession();
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Please enter honeypot ID: ");
 		int id = Integer.parseInt(scan.nextLine());
@@ -30,10 +33,10 @@ public class Driver {
 		
 		sess.close();
 		System.out.println(cave);
-		*/
+		
 		
 		//criteriaDemo();
-		queryDemo();
+		//queryDemo();
 	
 	}
 	

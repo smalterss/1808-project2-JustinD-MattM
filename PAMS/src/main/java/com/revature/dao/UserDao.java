@@ -5,9 +5,13 @@ import java.util.List;
 
 import javax.transaction.Transaction;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 
 import com.revature.pojos.User;
+import com.revature.util.SessionUtil;
 
 public abstract class UserDao implements Dao<User, Integer> {
 
@@ -29,8 +33,24 @@ public abstract class UserDao implements Dao<User, Integer> {
 	}
 	
 	public static User findByEmail(String email) {
-		User user = (User) getCurrentSession().get(User.class, email);
-		return user;
+		User user;
+		Session sess = SessionUtil.getSession();
+		Criteria criteria = sess.createCriteria(User.class);
+		
+		List<User> users = criteria.add(Restrictions.eq("emailAddress", email)).list();
+		
+		for(User u : users) {
+			User newguy = u;
+			System.out.println(newguy);
+		}
+		
+		for(User u : users) {
+			if (u != null) {
+				return u;
+			}
+		}
+				
+		return null;
 	}
 
 	public void delete(User user) {

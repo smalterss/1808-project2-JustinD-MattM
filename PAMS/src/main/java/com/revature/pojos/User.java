@@ -1,18 +1,25 @@
 package com.revature.pojos;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name="user")
+import org.springframework.stereotype.Component;
+
+@Entity
+@Table(name="USER_LIST")
+@Component
 public class User {
 
 	@Id
 	@Column(name="userId")
+//	@SequenceGenerator(name="userId_seq", sequenceName="userId_seq")
+//	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="userId_seq")
 	int userId;
 	
-	@Column(name="email")
-	String email;
+	@Column(name="emailAddress")
+	String emailAddress;
 	
 	@Column(name="password")
 	String password;
@@ -25,12 +32,12 @@ public class User {
 		this.userId = userId;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getEmailAddress() {
+		return emailAddress;
 	}
 
-	public void setUsername(String email) {
-		this.email = email;
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
 
 	public String getPassword() {
@@ -42,7 +49,12 @@ public class User {
 	}
 
 	public User() {
-		super();
+		
+	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", emailAddress=" + emailAddress + ", password=" + password + "]";
 	}
 	
 	

@@ -1,20 +1,23 @@
 package com.revature.services;
 
-import java.util.List;
+import org.springframework.stereotype.Component;
 
 import com.revature.dao.UserDao;
 import com.revature.pojos.User;
 
+@Component
 public class UserServices extends UserDao{
 
+	
 	public static boolean verifyEmail(String email) {
-		List<User> users = findAll();
-		for(User u : users) {
-			if(u.getEmail().equals(email)) {
-				return true;
-			}
+		
+		User user = findByEmail(email);
+		
+		if(user.getEmailAddress().equals(email)) {
+			return true;
+		} else {
+			return false;
 		}
-		return false;
 	}
 	
 	public static boolean verifyPassword(String email, String password) {
@@ -32,7 +35,7 @@ public class UserServices extends UserDao{
 		
 		if(verifyEmail(email)) {
 			if(verifyPassword(email, password)) {
-				user.setUsername(email);
+				user.setEmailAddress(email);
 				user.setPassword(password);
 				return user;
 			}else {

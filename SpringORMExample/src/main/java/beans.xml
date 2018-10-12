@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Enable @Transactional annotation -->
+	<tx:annotation-driven/>
+	
+	<context:component-scan/>
+	
+	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="url" value="jdbc:postgresql://rev1808java-nick-database.cm5yukudfgjj.us-east-2.rds.amazonaws.com:5432/rev1808_justin?"></property>
+		<property name="username" value="jdonn95"></property>
+		<property name="password" value="Tigerwdyt1!"></property>
+		<property name="driverClassName" value="org.postgresql.Driver"></property>
+	</bean>
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate5.localSessionFactoryBean">
+		<property name="dataSource" ref="myDataSource"></property>
+		<property name="packagesToScan" value="com.revature.domain"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+
+</beans>

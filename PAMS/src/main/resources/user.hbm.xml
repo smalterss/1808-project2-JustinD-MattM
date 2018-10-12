@@ -9,8 +9,8 @@
 			<generator class="increment"></generator>
 		</id>
 		
-		<property name="email" column="email" type="varchar"/>
-		<property name="password" column="password" type="varchar"/>
+		<property name="emailAddress" column="emailAddress" type="string"/>
+		<property name="password" column="password" type="string"/>
 		
 	</class>
 </hibernate-mapping>

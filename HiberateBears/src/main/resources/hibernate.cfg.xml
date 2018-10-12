@@ -21,10 +21,6 @@
 		
 		<property name="hibernate.show_sql">true</property>
 		
-		<!-- <mapping class="com.revature.entities.HoneyPot"/> -->
-		<mapping resource="honeypot.hbm.xml"/>
-		<mapping class="com.revature.entities.Bear"/>
-		<mapping class="com.revature.entities.Cave"/>
 		
 		<!-- Level 2 Cache -->
 		<property name="hibernate.cache.use_second_level_cache">true</property>
@@ -32,6 +28,12 @@
 		<property name="hibernate.cache.region.factory_class">
 			org.hibernate.cache.ehcache.EhCacheRegionFactory
 		</property>
+		<!-- <mapping class="com.revature.entities.HoneyPot"/> -->
+		<mapping resource="honeypot.hbm.xml"/>
+		<mapping class="com.revature.entities.Bear"/>
+		<mapping class="com.revature.entities.Cave"/>
+		
+		
 		
 	</session-factory>
 </hibernate-configuration>

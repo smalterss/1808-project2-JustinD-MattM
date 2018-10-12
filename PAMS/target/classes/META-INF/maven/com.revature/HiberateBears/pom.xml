@@ -4,7 +4,11 @@
 	<groupId>com.revature</groupId>
 	<artifactId>HiberateBears</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	
+	
 	<dependencies>
+	
 		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -48,5 +52,25 @@
 			<artifactId>hibernate-ehcache</artifactId> 
 			<version>4.0.0.Final</version> 
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.1.0.RELEASE</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>5.1.0.RELEASE</version>
+		</dependency>
+		
 	</dependencies> 
 </project> 
