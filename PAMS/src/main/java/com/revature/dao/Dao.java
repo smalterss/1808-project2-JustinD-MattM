@@ -10,6 +10,8 @@ public interface Dao <T, Id extends Serializable>{
 	public void persist(T t);
 	
 	public void update(T entity);
+	
+	public void save(T t);
 
 	public T findById(Id id);
 

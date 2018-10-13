@@ -1,19 +1,25 @@
 package com.revature.test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import com.revature.dao.UserDao;
 import com.revature.pojos.User;
 import com.revature.services.UserServices;
 
 public class Tests {
 	
 /*
- * Tests for the Use
+ * Tests for the UserDao
  */
 	
-	
+	@Test
+	public void findByIdTest() {
+		User user = UserDao.findByEmail("jld@rev.com");
+		assertEquals("pass", user.getPassword());
+	}
 	
 /*
  * Tests for the UserServices Class

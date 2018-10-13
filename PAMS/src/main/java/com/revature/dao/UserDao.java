@@ -16,7 +16,6 @@ import com.revature.util.SessionUtil;
 public abstract class UserDao implements Dao<User, Integer> {
 
 	private static Session currentSession;
-	private Transaction currentTransaction;
 		
 	public void persist(User user) {
 		getCurrentSession().persist(user);
@@ -25,6 +24,10 @@ public abstract class UserDao implements Dao<User, Integer> {
 	public void update(User user) {
 		getCurrentSession().update(user);
 		
+	}
+	
+	public void save(User user) {
+		getCurrentSession().save(user);
 	}
 
 	public User findById(Integer id) {
