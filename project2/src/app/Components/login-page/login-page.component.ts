@@ -12,12 +12,12 @@ export class LoginPageComponent implements OnInit {
     users: Array<User>;
 
     getUsers() {
-      this.userService.getUsers().subscribe(
-        data => this.users = data
-      );
+      // this.userService.getUsers().subscribe(
+      //   data => this.users = data
+      // );
     }
 
-    constructor(private userService: UserService) { }
+    constructor(/*private userService: UserService*/) { }
 
     ngOnInit() {
     }
