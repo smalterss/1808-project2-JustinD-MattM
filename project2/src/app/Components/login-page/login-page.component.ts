@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable} from '@angular/core';
 import { User } from '../../Types/users';
 import { UserService } from '../../Services/login.service';
 
@@ -12,9 +12,7 @@ export class LoginPageComponent implements OnInit {
     users: Array<User>;
 
     getUsers() {
-      this.userService.getUsers().subscribe(
-        data => this.users = data
-      );
+      this.userService.getUsers().subscribe(data => this.users = data);
     }
 
     constructor(/*private userService: UserServic*/) { }
