@@ -9,20 +9,21 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class SessionUtil {
 
-    private static SessionFactory sessionFactory;
+	private static SessionFactory sessionFactory;
 
-    static {
+	static {
+		try {
+			Class.forName("org.postgresql.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 
-        StandardServiceRegistry standardRegistry =
-                new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
-        Metadata metaData =
-                new MetadataSources(standardRegistry).getMetadataBuilder().build();
-        sessionFactory =
-                metaData.getSessionFactoryBuilder().build();
-
-    }
-    public static Session getSession(){
-        return sessionFactory.openSession();
-
-    }
+		StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
+		Metadata metaData = new MetadataSources(standardRegistry).getMetadataBuilder().build();
+		sessionFactory = metaData.getSessionFactoryBuilder().build();
+	}
+	
+	public static Session getSession(){
+		return sessionFactory.openSession();
+	}
 }

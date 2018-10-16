@@ -10,8 +10,10 @@ public class UserServices extends UserDao{
 
     
     public static boolean verifyEmail(String email) {
-        
+        System.out.println("inside verifyEmail with email: " + email);
         User user = findByEmail(email);
+        
+        System.out.println(user);
         
         if(user.getEmailAddress().equals(email)) {
             return true;
@@ -30,10 +32,13 @@ public class UserServices extends UserDao{
     }
     
     public static User verifyUser(User user) {
+    	System.out.println("Inside verified user, with user: " + user);
         String email = user.getEmailAddress();
         String password = user.getPassword();
         User authUser = new User();
-        
+        authUser.setEmailAddress(email);
+        authUser.setPassword(password);
+        System.out.println(authUser);
         if(verifyEmail(email)) {
             if(verifyPassword(email, password)) {
                 user.setEmailAddress(email);

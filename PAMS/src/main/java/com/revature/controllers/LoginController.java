@@ -1,11 +1,9 @@
 package com.revature.controllers;
 
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,8 +25,9 @@ public class LoginController {
 		}
 		
 	}
-	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public String loginPost(User user, HttpSession sess) {
+	@CrossOrigin
+	@RequestMapping(value="/login", method = RequestMethod.POST, consumes= {"application/json"})
+	public String loginPost(@RequestBody User user, HttpSession sess) {
 		System.out.println("Posting biattcchchhchchhc");
 		System.out.println(user);
 	User authUser = userServices.verifyUser(user);
