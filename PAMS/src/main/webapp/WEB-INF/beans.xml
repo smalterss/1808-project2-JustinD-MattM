@@ -6,22 +6,18 @@
     xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-    
-    
-    <context:annotation-config></context:annotation-config>
+        
+        <context:annotation-config></context:annotation-config>
 
-   <context:component-scan
-
-       base-package="com.revature">
-
-   </context:component-scan>
+   <context:component-scan base-package="com.revature"></context:component-scan>
 
    <mvc:annotation-driven />    <!-- tells dispatcherservlet where our static resources are -->
 
-   <mvc:resources location="/" mapping="/"></mvc:resources>
-    
-<!--     <bean id="user" class="com.revature.pojos.User"></bean>
-    
-    <bean id="userServices" class="com.revature.services.UserServices"></bean>  -->
+   <mvc:resources location="/" mapping="/**"></mvc:resources>
 
+
+
+    <bean id="user" class="com.revature.pojos.User"></bean>
+    <bean id="userServices" class="com.revature.services.UserServices"></bean>
 </beans>
+    

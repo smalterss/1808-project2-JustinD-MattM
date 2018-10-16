@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+       "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+       "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.PostgreSQLDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			org.postgresql.Driver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:postgresql://rev1808java-nick-database.cm5yukudfgjj.us-east-2.rds.amazonaws.com:5432/rev1808_justin?
+		</property>
+		<property name="hibernate.connection.username">
+			jdonn95
+		</property>
+		<property name="hibernate.connection.password">
+			Tigerwdyt1!
+		</property>
+
+		<property name="hibernate.show_sql">true</property>
+
+
+		<!-- <mapping class="com.revature.entities.HoneyPot"/> -->
+		<mapping class="com.revature.pojos.User"/>
+	</session-factory>
+</hibernate-configuration>
