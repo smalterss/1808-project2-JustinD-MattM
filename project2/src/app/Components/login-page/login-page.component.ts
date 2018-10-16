@@ -17,7 +17,7 @@ export class LoginPageComponent implements OnInit {
       );
     }
 
-    constructor(private userService: UserService) { }
+    constructor(/*private userService: UserServic*/) { }
 
     ngOnInit() {
     }
