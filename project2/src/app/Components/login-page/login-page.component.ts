@@ -1,6 +1,6 @@
 import { Component, OnInit, Injectable} from '@angular/core';
-import { User } from '../../Types/users';
-import { UserService } from '../../Services/login.service';
+import { User } from '../../Components/user';
+import { LoginService } from '../../Services/login.service';
 
 @Component({
   selector: 'app-login-page',
@@ -10,12 +10,21 @@ import { UserService } from '../../Services/login.service';
 export class LoginPageComponent implements OnInit {
 
     users: Array<User>;
-
+    emailAddress: '';
+    password: '';
+    user: User;
     getUsers() {
-      this.userService.getUsers().subscribe(data => this.users = data);
+      this.loginService.getUsers().subscribe(data => this.users = data);
     }
 
-    constructor(private userService: UserService) { }
+    postLogin(): void {
+      console.log(this.emailAddress + ' ' + this.password);
+      const u = new User(this.emailAddress, this.password, 0);
+      console.log(u);
+      this.loginService.postlogin(u).subscribe();
+    }
+
+    constructor(private loginService: LoginService) { }
 
     ngOnInit() {
     }
