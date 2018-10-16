@@ -13,6 +13,8 @@ public class UserServices extends UserDao{
         System.out.println("inside verifyEmail with email: " + email);
         User user = findByEmail(email);
         
+        System.out.println(user);
+        
         if(user.getEmailAddress().equals(email)) {
             return true;
         } else {

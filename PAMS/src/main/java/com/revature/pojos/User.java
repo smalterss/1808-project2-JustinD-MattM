@@ -13,13 +13,14 @@ import org.springframework.stereotype.Component;
 public class User {
 	
 	@Id
-	@Column(name="userId")
+	@Column(name="password")
+	
 	private String password;
 	
 	@Column(name="emailAddress")
 	private String emailAddress;
 	
-	@Column(name="password")
+	@Column(name="userId")
 	private int userId;
 	
 	
