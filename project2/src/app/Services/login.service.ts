@@ -6,7 +6,7 @@ import { User } from '../Types/users';
     providedIn: 'root'
 })
 export class UserService {
-    readonly url = 'http://localhost:8080/login/';
+    readonly url = 'http://localhost:8081/login/';
 
     constructor(private http: HttpClient) {}
 

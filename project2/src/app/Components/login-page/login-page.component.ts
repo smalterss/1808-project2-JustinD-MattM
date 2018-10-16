@@ -15,7 +15,7 @@ export class LoginPageComponent implements OnInit {
       this.userService.getUsers().subscribe(data => this.users = data);
     }
 
-    constructor(/*private userService: UserServic*/) { }
+    constructor(private userService: UserService) { }
 
     ngOnInit() {
     }
