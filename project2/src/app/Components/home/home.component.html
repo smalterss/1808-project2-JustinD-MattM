@@ -1,3 +1,7 @@
-<p>
-  home works!
-</p>
+<div *ngIf="user.status === 'employee'">
+  <form>
+    <input type="submit" value="Apply for Promotion">
+    <br>
+    <input type="submit" value="View Appliation Status">
+  </form>
+</div>

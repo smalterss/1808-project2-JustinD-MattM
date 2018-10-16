@@ -7,12 +7,20 @@ import { AppRoutingModule } from './app-routing.module';
 import {  routes } from './app-routing.module';
 import { HomeComponent } from './Components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PromoAppComponent } from './Components/promo-app/promo-app.component';
+import { ApplicationComponent } from './Components/application/application.component';
+import { AppStatusComponent } from './Components/app-status/app-status.component';
+import { RequestsComponent } from './Components/requests/requests.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    HomeComponent
+    HomeComponent,
+    PromoAppComponent,
+    ApplicationComponent,
+    AppStatusComponent,
+    RequestsComponent
   ],
   imports: [
     HttpClientModule,
