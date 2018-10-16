@@ -11,6 +11,7 @@ import { PromoAppComponent } from './Components/promo-app/promo-app.component';
 import { ApplicationComponent } from './Components/application/application.component';
 import { AppStatusComponent } from './Components/app-status/app-status.component';
 import { RequestsComponent } from './Components/requests/requests.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { RequestsComponent } from './Components/requests/requests.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot(
       routes,
       { enableTracing: true } // <-- debugging purposes only
