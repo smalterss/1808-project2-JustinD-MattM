@@ -34,27 +34,12 @@ public abstract class UserDao implements Dao<User, Integer> {
     public static User findByEmail(String email) {
         User user;
         Session sess = SessionUtil.getSession();
-//        Criteria criteria = sess.createCriteria(User.class);
         
         String hql = "FROM User as u WHERE u.emailAddress = :email";
         
         Query query = sess.createQuery(hql);
         query.setParameter("email", email);
         List<User> users = query.list();
-        
-        System.out.println(users);
-        
-        
-        
-        System.out.println("right after the hibernate function in findByEmail");
-/*       List<User> users = criteria.add(Restrictions.eq("emailAddress", email)).list();
-        String hql = "FROM User WHERE emailAddress = :email";
-        Query query = sess.createQuery(hql);
-        query.setParameter("email", email);
-        List<User> users = query.list();
-*/        
-        System.out.println(users);
-        
         
         for(User u : users) {
             User newguy = u;

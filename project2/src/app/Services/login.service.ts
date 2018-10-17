@@ -13,14 +13,14 @@ const httpOptions = {
     providedIn: 'root'
 })
 export class LoginService {
-    url = 'http://localhost:8081/PAMS/login/';
+    url = 'http://localhost:8081/PAMS/login';
 
     constructor(private http: HttpClient) {}
 
     getUsers() {
         return this.http.get<Array<User>>(this.url);
     }
-postlogin (user: User): Observable<User> {
-    return this.http.post<User>(this.url, user, httpOptions);
-}
+    postlogin (user: User): Observable<string> {
+        return this.http.post<string>(this.url, user, httpOptions);
+    }
 }

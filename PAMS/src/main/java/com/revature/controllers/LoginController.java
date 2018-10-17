@@ -2,6 +2,7 @@ package com.revature.controllers;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ public class LoginController {
 	private UserServices userServices;
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String loginGet(HttpSession sess){
-		System.out.println("Working its fucking working~~!!!@@@!#@!@@@#");
+		System.out.println("Inside of the Get method in Login Controllers");
 		if (sess.getAttribute("user") != null) {
 			return "home";
 		}else {
@@ -25,17 +26,19 @@ public class LoginController {
 		}
 		
 	}
-	@CrossOrigin
+	@CrossOrigin("http://localhost:4200")
 	@RequestMapping(value="/login", method = RequestMethod.POST, consumes= {"application/json"})
-	public String loginPost(@RequestBody User user, HttpSession sess) {
-		System.out.println("Posting biattcchchhchchhc");
-		System.out.println(user);
+	
+	public User loginPost(@RequestBody User user, HttpSession sess) {
 	User authUser = userServices.verifyUser(user);
+	
 	if (authUser != null) {
+		System.out.println("authUser was not null and should be returning the string home");
 		sess.setAttribute("user", authUser);
-		return "home";
+		return user;
 	}else { 
-		return "login";
+		System.out.println("authUser was null and should be returning login");
+		return null;
 	}
 	}
 }
