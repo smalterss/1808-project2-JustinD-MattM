@@ -11,7 +11,7 @@ export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginPageComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'promo-app', component: AppStatusComponent},
+  { path: 'promo-app', component: PromoAppComponent},
   { path: 'application', component: PromoAppComponent},
   { path: 'requests', component: ApplicationComponent},
   { path: 'app-status', component: RequestsComponent}
