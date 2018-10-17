@@ -1,6 +1,9 @@
 import { Component, OnInit, Injectable} from '@angular/core';
 import { User } from '../../Components/user';
 import { LoginService } from '../../Services/login.service';
+import { directiveCreate } from '@angular/core/src/render3/instructions';
+import { Router } from '@angular/router';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-login-page',
@@ -18,13 +21,17 @@ export class LoginPageComponent implements OnInit {
     }
 
     postLogin(): void {
-      console.log(this.emailAddress + ' ' + this.password);
       const u = new User(this.emailAddress, this.password, 0);
-      console.log(u);
-      this.loginService.postlogin(u).subscribe();
+      this.loginService.postlogin(u).subscribe(authUser => {
+        console.log(authUser);
+        if (this.emailAddress != null) {
+          this.router.navigateByUrl('home');
+        }
+      });
+
     }
 
-    constructor(private loginService: LoginService) { }
+    constructor(private loginService: LoginService, private router: Router) { }
 
     ngOnInit() {
     }

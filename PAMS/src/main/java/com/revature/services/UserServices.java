@@ -40,9 +40,12 @@ public class UserServices extends UserDao{
         authUser.setPassword(password);
         System.out.println(authUser);
         if(verifyEmail(email)) {
+        	System.out.println("Email was verified");
             if(verifyPassword(email, password)) {
+            	System.out.println("Password was verified");
                 user.setEmailAddress(email);
                 user.setPassword(password);
+                System.out.println("User " + authUser + " was created and is being returned");
                 return authUser;
             }else {
                 return null;
