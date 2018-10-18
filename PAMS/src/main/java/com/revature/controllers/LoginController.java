@@ -30,13 +30,11 @@ public class LoginController {
 	@RequestMapping(value="/login", method = RequestMethod.POST, consumes= {"application/json"})
 	
 	public User loginPost(@RequestBody User user, HttpSession sess) {
-		System.out.println("just got into the post method");
 	User authUser = userServices.verifyUser(user);
 	
 	if (authUser != null) {
 		System.out.println("authUser was not null and should be returning the string home");
 		sess.setAttribute("user", authUser);
-		System.out.println("returning the user from the post method");
 		return user;
 	}else { 
 		System.out.println("authUser was null and should be returning login");
