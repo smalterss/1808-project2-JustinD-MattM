@@ -24,6 +24,42 @@ public class PromoApp {
 	
 	@Column(name="justification")
 	private String justification;
+	
+	public boolean isSupevisorApproval() {
+		return supevisorApproval;
+	}
+
+	public void setSupevisorApproval(boolean supevisorApproval) {
+		this.supevisorApproval = supevisorApproval;
+	}
+
+	public boolean isManagerApproval() {
+		return managerApproval;
+	}
+
+	public void setManagerApproval(boolean managerApproval) {
+		this.managerApproval = managerApproval;
+	}
+
+	public boolean isStoreManagerApproval() {
+		return storeManagerApproval;
+	}
+
+	public void setStoreManagerApproval(boolean storeManagerApproval) {
+		this.storeManagerApproval = storeManagerApproval;
+	}
+
+	@Column(name="supervisorapproval")
+	private boolean supevisorApproval;
+	
+	@Column(name="managerapproval")
+	private boolean managerApproval;
+
+	@Column(name="storemanagerapproval")
+	private boolean storeManagerApproval;
+
+
+	
 
 	public PromoApp(Integer id, String userId, String job, String justification) {
 		super();

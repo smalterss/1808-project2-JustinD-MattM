@@ -10,10 +10,10 @@ import com.revature.services.UserServices;
 
 @RestController
 
-public class HomeController {
+public class PromoAppController {
 	private UserServices userServices;
 
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	@RequestMapping(value = "/promo-app", method = RequestMethod.GET)
 	public String loginGet(HttpSession sess) {
 		System.out.println("Inside of the Get method in home Controllers");
 		return null;
