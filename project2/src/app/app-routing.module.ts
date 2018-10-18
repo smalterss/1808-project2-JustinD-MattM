@@ -14,7 +14,7 @@ export const routes: Routes = [
   { path: 'promo-app', component: PromoAppComponent},
   { path: 'application', component: PromoAppComponent},
   { path: 'requests', component: ApplicationComponent},
-  { path: 'app-status', component: RequestsComponent}
+  { path: 'app-status', component: AppStatusComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
