@@ -5,7 +5,7 @@ import com.revature.pojos.PromoApp;
 
 public class PromoAppServices extends PromoAppDao{
 
-	  public void updateEmployee(PromoApp p) {
+	  public void updateSupervisorApproval(PromoApp p) {
 		  p.set
 	  }
 }
