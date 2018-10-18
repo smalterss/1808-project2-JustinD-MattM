@@ -17,7 +17,7 @@ public class PromoAppController {
 	private PromoAppServices pas;
 
 	@CrossOrigin
-	@RequestMapping(value = "/promo-app", method = RequestMethod.POST)
+	@RequestMapping(value = "/promo-app", method = RequestMethod.POST, consumes= {"application/json"})
 	public void promoAppPost(@RequestBody PromoApp p, HttpSession sess) {
 		System.out.println("Inside of the POST method in Promo App Controller");
 		pas.save(p);
