@@ -25,6 +25,27 @@ public class PromoApp {
 	@Column(name="justification")
 	private String justification;
 	
+	@Column(name="supervisorapproval")
+	private boolean supevisorApproval;
+	
+	@Column(name="managerapproval")
+	private boolean managerApproval;
+
+	@Column(name="storemanagerapproval")
+	private boolean storeManagerApproval;
+	
+	public PromoApp(Integer id, String userId, String job, String justification, boolean supevisorApproval,
+			boolean managerApproval, boolean storeManagerApproval) {
+		super();
+		this.id = id;
+		this.userId = userId;
+		this.job = job;
+		this.justification = justification;
+		this.supevisorApproval = supevisorApproval;
+		this.managerApproval = managerApproval;
+		this.storeManagerApproval = storeManagerApproval;
+	}
+
 	public boolean isSupevisorApproval() {
 		return supevisorApproval;
 	}
@@ -47,26 +68,6 @@ public class PromoApp {
 
 	public void setStoreManagerApproval(boolean storeManagerApproval) {
 		this.storeManagerApproval = storeManagerApproval;
-	}
-
-	@Column(name="supervisorapproval")
-	private boolean supevisorApproval;
-	
-	@Column(name="managerapproval")
-	private boolean managerApproval;
-
-	@Column(name="storemanagerapproval")
-	private boolean storeManagerApproval;
-
-
-	
-
-	public PromoApp(Integer id, String userId, String job, String justification) {
-		super();
-		this.id = id;
-		this.userId = userId;
-		this.job = job;
-		this.justification = justification;
 	}
 
 	public PromoApp() {
@@ -107,9 +108,9 @@ public class PromoApp {
 
 	@Override
 	public String toString() {
-		return "PromoApp [id=" + id + ", userId=" + userId + ", job=" + job + ", justification=" + justification + "]";
+		return "PromoApp [id=" + id + ", userId=" + userId + ", job=" + job + ", justification=" + justification
+				+ ", supevisorApproval=" + supevisorApproval + ", managerApproval=" + managerApproval
+				+ ", storeManagerApproval=" + storeManagerApproval + "]";
 	}
-	
-	
 
 }

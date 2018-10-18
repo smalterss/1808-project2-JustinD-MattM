@@ -2,21 +2,25 @@ package com.revature.controllers;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.services.UserServices;
+import com.revature.pojos.PromoApp;
+import com.revature.services.PromoAppServices;
 
 @RestController
-
+@CrossOrigin(origins="htpp://localhost:4200")
 public class PromoAppController {
-	private UserServices userServices;
+	private PromoAppServices pas;
 
-	@RequestMapping(value = "/promo-app", method = RequestMethod.GET)
-	public String loginGet(HttpSession sess) {
-		System.out.println("Inside of the Get method in home Controllers");
-		return null;
+	@CrossOrigin
+	@RequestMapping(value = "/promo-app", method = RequestMethod.POST)
+	public void promoAppPost(@RequestBody PromoApp p, HttpSession sess) {
+		System.out.println("Inside of the POST method in Promo App Controller");
+		pas.save(p);
 		
 
 	}

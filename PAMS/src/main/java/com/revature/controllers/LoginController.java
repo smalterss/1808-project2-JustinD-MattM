@@ -15,7 +15,7 @@ import com.revature.services.UserServices;
 @RestController
 @CrossOrigin(origins= "http://localhost:4200")
 public class LoginController {
-	private UserServices userServices;
+	private UserServices us;
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String loginGet(HttpSession sess){
 		System.out.println("Inside of the Get method in Login Controllers");
@@ -30,7 +30,7 @@ public class LoginController {
 	@RequestMapping(value="/login", method = RequestMethod.POST, consumes= {"application/json"})
 	
 	public User loginPost(@RequestBody User user, HttpSession sess) {
-	User authUser = userServices.verifyUser(user);
+	User authUser = us.verifyUser(user);
 	
 	if (authUser != null) {
 		System.out.println("authUser was not null and should be returning the string home");
