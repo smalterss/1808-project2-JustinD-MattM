@@ -32,7 +32,7 @@ public abstract class UserDao implements Dao<User, Integer> {
     }
     
     public static User findByEmail(String email) {
-        User user;
+  
         Session sess = SessionUtil.getSession();
         
         String hql = "FROM User as u WHERE u.emailAddress = :email";
