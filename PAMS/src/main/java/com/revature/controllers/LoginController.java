@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.pojos.User;
 import com.revature.services.UserServices;
 
-@RestController
 @CrossOrigin(origins= "http://localhost:4200")
+@RestController
 public class LoginController {
 	private UserServices us;
+	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String loginGet(HttpSession sess){
 		System.out.println("Inside of the Get method in Login Controllers");
@@ -26,9 +27,9 @@ public class LoginController {
 		}
 		
 	}
-	@CrossOrigin("http://localhost:4200")
-	@RequestMapping(value="/login", method = RequestMethod.POST, consumes= {"application/json"})
 	
+	@CrossOrigin
+	@RequestMapping(value="/login", method = RequestMethod.POST, consumes= {"application/json"})
 	public User loginPost(@RequestBody User user, HttpSession sess) {
 	User authUser = us.verifyUser(user);
 	
