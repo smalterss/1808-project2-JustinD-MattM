@@ -27,7 +27,7 @@ public class User {
 	
 	@Column(name="employee")
 	private boolean employee;
-
+ 
 	@Column(name="supervisor")
 	private boolean supervisor;
 	
