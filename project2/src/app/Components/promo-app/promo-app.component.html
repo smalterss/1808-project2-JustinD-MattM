@@ -1,4 +1,9 @@
-<form>
-  <p>Enter Employee Id</p>
-<input type="text" value="Enter Employee Id">
-</form>
+<form action="submission" method="post">
+    Email Address:<br> 
+    <input type="text" name="emailAddress" placeholder="Email Address" [(ngModel)]="emailAddress"><br>
+    Job Position Title:<br>
+    <input type="text" name="jobposition" placeholder="Job Position Title" [(ngModel)]="jobposition"><br> 
+    Justification:<br>
+    <input type="text" name="justification" placeholder="Justification for applying" [(ngModel)]="justification">
+    <input type="submit" (click)="postLogin()"/>
+  </form>
