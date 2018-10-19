@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.pojos.PromoApp;
 import com.revature.services.PromoAppServices;
 
+@CrossOrigin(origins= "http://localhost:4200")
 @RestController
-@CrossOrigin(origins="htpp://localhost:4200")
 public class PromoAppController {
 	private PromoAppServices pas;
 
@@ -21,7 +21,5 @@ public class PromoAppController {
 	public void promoAppPost(@RequestBody PromoApp p, HttpSession sess) {
 		System.out.println("Inside of the POST method in Promo App Controller");
 		pas.save(p);
-		
-
 	}
 }
