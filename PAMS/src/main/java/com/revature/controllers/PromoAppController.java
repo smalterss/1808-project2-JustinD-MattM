@@ -12,7 +12,7 @@ import com.revature.pojos.PromoApp;
 import com.revature.services.PromoAppServices;
 
 @RestController
-@CrossOrigin(origins="htpp://localhost:4200")
+@CrossOrigin(origins="http://localhost:4200")
 public class PromoAppController {
 	private PromoAppServices pas;
 
