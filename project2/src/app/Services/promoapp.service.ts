@@ -21,6 +21,7 @@ export class PromoAppService {
         return this.http.get<Array<App>>(this.url);
     }
     postApp (app: App): Observable<string> {
+        console.log('inside postApp of promoapp.service');
         return this.http.post<string>(this.url, app, httpOptions);
     }
 }
