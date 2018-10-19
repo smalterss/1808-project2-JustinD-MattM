@@ -160,9 +160,9 @@ var ApplicationComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "App", function() { return App; });
 var App = /** @class */ (function () {
-    function App(emailAddress, jobposition, justification) {
+    function App(emailAddress, job, justification) {
         this.emailAddress = emailAddress;
-        this.jobposition = jobposition;
+        this.job = job;
         this.justification = justification;
     }
     return App;
@@ -350,7 +350,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form action=\"submission\" method=\"post\">\r\n    Email Address:<br> \r\n    <input type=\"text\" name=\"emailAddress\" placeholder=\"Email Address\" [(ngModel)]=\"emailAddress\"><br>\r\n    Job Position Title:<br>\r\n    <input type=\"text\" name=\"jobposition\" placeholder=\"Job Position Title\" [(ngModel)]=\"jobposition\"><br> \r\n    Justification:<br>\r\n    <input type=\"text\" name=\"justification\" placeholder=\"Justification for applying\" [(ngModel)]=\"justification\">\r\n    <br>\r\n    <input type=\"submit\" (click)=\"postApp()\"/>\r\n</form>"
+module.exports = "<form action=\"submission\" method=\"post\">\r\n    Email Address:<br> \r\n    <input type=\"text\" name=\"emailAddress\" placeholder=\"Email Address\" [(ngModel)]=\"emailAddress\"><br>\r\n    Job Position Title:<br>\r\n    <input type=\"text\" name=\"job\" placeholder=\"Job Position Title\" [(ngModel)]=\"job\"><br> \r\n    Justification:<br>\r\n    <input type=\"text\" name=\"justification\" placeholder=\"Justification for applying\" [(ngModel)]=\"justification\">\r\n    <br>\r\n    <input type=\"submit\" (click)=\"postApp()\"/>\r\n</form>"
 
 /***/ }),
 
@@ -392,12 +392,11 @@ var PromoAppComponent = /** @class */ (function () {
     };
     PromoAppComponent.prototype.postApp = function () {
         var _this = this;
-        var promoapp = new _apps__WEBPACK_IMPORTED_MODULE_3__["App"](this.emailAddress, this.jobposition, this.justification);
+        var promoapp = new _apps__WEBPACK_IMPORTED_MODULE_3__["App"](this.emailAddress, this.job, this.justification);
+        console.log(promoapp);
         this.loginService.postApp(promoapp).subscribe(function (promoApp) {
             console.log(promoApp);
-            if (_this.emailAddress != null) {
-                _this.router.navigateByUrl('home');
-            }
+            _this.router.navigateByUrl('home');
         });
     };
     PromoAppComponent.prototype.ngOnInit = function () {
