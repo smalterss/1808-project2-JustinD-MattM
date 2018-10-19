@@ -14,18 +14,17 @@ export class PromoAppComponent implements OnInit {
 
   apps: Array<App>;
   emailAddress: '';
-  jobposition: '';
+  job: '';
   justification: '';
   getApps() {
     this.loginService.getApps().subscribe(data => this.apps = data);
   }
   postApp(): void {
-    const promoapp = new App(this.emailAddress, this.jobposition, this.justification);
+    const promoapp = new App(this.emailAddress, this.job, this.justification);
+    console.log(promoapp);
     this.loginService.postApp(promoapp).subscribe(promoApp => {
       console.log(promoApp);
-      if (this.emailAddress != null) {
-        this.router.navigateByUrl('home');
-      }
+      this.router.navigateByUrl('home');
     });
 
   }

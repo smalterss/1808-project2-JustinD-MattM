@@ -1,12 +1,11 @@
 export class App {
     emailAddress: string;
-    jobposition: string;
+    job: string;
     justification: string;
-    status: 'employee';
 
-    constructor(emailAddress: string, jobposition: string, justification: string) {
+    constructor(emailAddress: string, job: string, justification: string) {
         this.emailAddress = emailAddress;
-        this.jobposition = jobposition;
+        this.job = job;
         this.justification = justification;
             }
 }

@@ -33,11 +33,9 @@ public class LoginController {
 	User authUser = us.verifyUser(user);
 	
 	if (authUser != null) {
-		System.out.println("authUser was not null and should be returning the string home");
 		sess.setAttribute("user", authUser);
 		return user;
 	}else { 
-		System.out.println("authUser was null and should be returning login");
 		return null;
 	}
 	}
