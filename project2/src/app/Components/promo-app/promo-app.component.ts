@@ -3,7 +3,7 @@ import { directiveCreate } from '@angular/core/src/render3/instructions';
 import { Router } from '@angular/router';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { PromoAppService } from '../../Services/promoapp.service';
-import { App } from '../../Components/apps';
+import { App } from '../apps';
 
 @Component({
   selector: 'app-promo-app',

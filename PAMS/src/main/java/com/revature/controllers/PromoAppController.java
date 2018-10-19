@@ -11,17 +11,20 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.pojos.PromoApp;
 import com.revature.services.PromoAppServices;
 
+@CrossOrigin(origins= "http://localhost:4200")
 @RestController
+<<<<<<< HEAD
 @CrossOrigin(origins="http://localhost:4200")
+=======
+>>>>>>> 6adb4ccd18906870b75c074545f5851aa6a5fe06
 public class PromoAppController {
 	private PromoAppServices pas;
 
 	@CrossOrigin
-	@RequestMapping(value = "/promo-app", method = RequestMethod.POST)
+	@RequestMapping(value = "/promo-app", method = RequestMethod.POST, consumes= {"application/json"})
 	public void promoAppPost(@RequestBody PromoApp p, HttpSession sess) {
 		System.out.println("Inside of the POST method in Promo App Controller");
-		pas.save(p);
+		System.out.println(p);
 		
-
 	}
 }
