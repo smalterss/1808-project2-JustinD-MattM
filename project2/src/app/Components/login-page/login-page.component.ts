@@ -31,6 +31,10 @@ export class LoginPageComponent implements OnInit {
 
     }
 
+    makeAccount() {
+      this.router.navigateByUrl('createAccount');
+    }
+
     constructor(private loginService: LoginService, private router: Router) { }
 
     ngOnInit() {
