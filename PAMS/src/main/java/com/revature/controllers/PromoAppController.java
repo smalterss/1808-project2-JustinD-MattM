@@ -13,10 +13,6 @@ import com.revature.services.PromoAppServices;
 
 @CrossOrigin(origins= "http://localhost:4200")
 @RestController
-<<<<<<< HEAD
-@CrossOrigin(origins="http://localhost:4200")
-=======
->>>>>>> 6adb4ccd18906870b75c074545f5851aa6a5fe06
 public class PromoAppController {
 	private PromoAppServices pas;
 
