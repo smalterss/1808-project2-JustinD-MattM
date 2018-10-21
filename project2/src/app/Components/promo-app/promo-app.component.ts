@@ -17,18 +17,18 @@ export class PromoAppComponent implements OnInit {
   job: '';
   justification: '';
   getApps() {
-    this.loginService.getApps().subscribe(data => this.apps = data);
+    this.promoAppService.getApps().subscribe(data => this.apps = data);
   }
   postApp(): void {
     const promoapp = new App(this.emailAddress, this.job, this.justification);
     console.log(promoapp);
-    this.loginService.postApp(promoapp).subscribe(promoApp => {
+    this.promoAppService.postApp(promoapp).subscribe(promoApp => {
       console.log(promoApp);
       this.router.navigateByUrl('home');
     });
 
   }
-  constructor(private loginService: PromoAppService, private router: Router) { }
+  constructor(private promoAppService: PromoAppService, private router: Router) { }
 
   ngOnInit() {
   }
