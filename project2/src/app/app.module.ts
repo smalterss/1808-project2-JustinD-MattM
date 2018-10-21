@@ -12,11 +12,7 @@ import { ApplicationComponent } from './Components/application/application.compo
 import { AppStatusComponent } from './Components/app-status/app-status.component';
 import { RequestsComponent } from './Components/requests/requests.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-<<<<<<< HEAD
-import { CreateAccountComponent } from './create-account/create-account.component';
-=======
-import { SubmittedComponent } from './Components/submitted/submitted.component';
->>>>>>> 6adb4ccd18906870b75c074545f5851aa6a5fe06
+import { CreateAccountComponent } from './Components/create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +23,7 @@ import { SubmittedComponent } from './Components/submitted/submitted.component';
     ApplicationComponent,
     AppStatusComponent,
     RequestsComponent,
-<<<<<<< HEAD
     CreateAccountComponent
-=======
-    SubmittedComponent
->>>>>>> 6adb4ccd18906870b75c074545f5851aa6a5fe06
   ],
   imports: [
     HttpClientModule,

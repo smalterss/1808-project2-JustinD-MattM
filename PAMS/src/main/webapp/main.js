@@ -104,7 +104,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  application works!\n</p>\n"
+module.exports = "<p>\r\n  application works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -166,6 +166,75 @@ var App = /** @class */ (function () {
         this.justification = justification;
     }
     return App;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/Components/create-account/create-account.component.css":
+/*!************************************************************************!*\
+  !*** ./src/app/Components/create-account/create-account.component.css ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/Components/create-account/create-account.component.html":
+/*!*************************************************************************!*\
+  !*** ./src/app/Components/create-account/create-account.component.html ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<form action=\"submit\" method=\"post\">\n    Email Address:<br> \n    <input type=\"text\" name=\"emailAddress\" placeholder=\"Enter Email Address\" [(ngModel)]=\"emailAddress\"><br>\n    Password:<br>\n    <input type=\"password\" name=\"password\" placeholder=\" Enter Password\" [(ngModel)]=\"password\">\n    <br>\n    <input type=\"Submit\" (click)=\"postLogin()\"/>\n    <br>\n    <input type=\"button\" value=\"Don't Have an Account? Click Here!\" (click)=\"createAccount()\"/>\n  </form>\n"
+
+/***/ }),
+
+/***/ "./src/app/Components/create-account/create-account.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/Components/create-account/create-account.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: CreateAccountComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateAccountComponent", function() { return CreateAccountComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _Services_createaccount_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Services/createaccount.service */ "./src/app/Services/createaccount.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CreateAccountComponent = /** @class */ (function () {
+    function CreateAccountComponent(loginService, router) {
+        this.loginService = loginService;
+        this.router = router;
+    }
+    CreateAccountComponent.prototype.ngOnInit = function () {
+    };
+    CreateAccountComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-create-account',
+            template: __webpack_require__(/*! ./create-account.component.html */ "./src/app/Components/create-account/create-account.component.html"),
+            styles: [__webpack_require__(/*! ./create-account.component.css */ "./src/app/Components/create-account/create-account.component.css")]
+        }),
+        __metadata("design:paramtypes", [_Services_createaccount_service__WEBPACK_IMPORTED_MODULE_1__["CreateAccountService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], CreateAccountComponent);
+    return CreateAccountComponent;
 }());
 
 
@@ -265,7 +334,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form action=\"login\" method=\"post\">\r\n  Email:<br> \r\n  <input type=\"text\" name=\"emailAddress\" placeholder=\"Email Address\" [(ngModel)]=\"emailAddress\"><br>\r\n  Password:<br>\r\n  <input type=\"password\" name=\"password\" placeholder=\"Password\" [(ngModel)]=\"password\">\r\n  <br>\r\n  <input type=\"submit\" (click)=\"postLogin()\"/>\r\n</form>"
+module.exports = "<form action=\"login\" method=\"post\">\n  Email:<br> \n  <input type=\"text\" name=\"emailAddress\" placeholder=\"Email Address\" [(ngModel)]=\"emailAddress\"><br>\n  Password:<br>\n  <input type=\"password\" name=\"password\" placeholder=\"Password\" [(ngModel)]=\"password\">\n  <br>\n  <input type=\"Submit\" (click)=\"postLogin()\"/>\n  <br>\n  <input type=\"button\" value=\"Don't Have an Account? Click Here!\" (click)=\"makeAccount()\"/>\n</form>"
 
 /***/ }),
 
@@ -315,6 +384,9 @@ var LoginPageComponent = /** @class */ (function () {
             }
         });
     };
+    LoginPageComponent.prototype.makeAccount = function () {
+        this.router.navigateByUrl('createAccount');
+    };
     LoginPageComponent.prototype.ngOnInit = function () {
     };
     LoginPageComponent = __decorate([
@@ -350,7 +422,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form action=\"submission\" method=\"post\">\r\n    Email Address:<br> \r\n    <input type=\"text\" name=\"emailAddress\" placeholder=\"Email Address\" [(ngModel)]=\"emailAddress\"><br>\r\n    Job Position Title:<br>\r\n    <input type=\"text\" name=\"job\" placeholder=\"Job Position Title\" [(ngModel)]=\"job\"><br> \r\n    Justification:<br>\r\n    <input type=\"text\" name=\"justification\" placeholder=\"Justification for applying\" [(ngModel)]=\"justification\">\r\n    <br>\r\n    <input type=\"submit\" (click)=\"postApp()\"/>\r\n</form>"
+module.exports = "<form action=\"submission\" method=\"post\">\r\n    Email Address:<br> \r\n    <input type=\"text\" name=\"emailAddress\" placeholder=\"Email Address\" [(ngModel)]=\"emailAddress\"><br>\r\n    Job Position Title:<br>\r\n    <input type=\"text\" name=\"job\" placeholder=\"Job Position Title\" [(ngModel)]=\"job\"><br> \r\n    Justification:<br>\r\n    <input type=\"text\" name=\"justification\" placeholder=\"Justification for applying\" [(ngModel)]=\"justification\">\r\n    <br>\r\n    <input type=\"submit\" (click)=\"postApp()\"/>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -382,19 +454,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var PromoAppComponent = /** @class */ (function () {
-    function PromoAppComponent(loginService, router) {
-        this.loginService = loginService;
+    function PromoAppComponent(promoAppService, router) {
+        this.promoAppService = promoAppService;
         this.router = router;
     }
     PromoAppComponent.prototype.getApps = function () {
         var _this = this;
-        this.loginService.getApps().subscribe(function (data) { return _this.apps = data; });
+        this.promoAppService.getApps().subscribe(function (data) { return _this.apps = data; });
     };
     PromoAppComponent.prototype.postApp = function () {
         var _this = this;
         var promoapp = new _apps__WEBPACK_IMPORTED_MODULE_3__["App"](this.emailAddress, this.job, this.justification);
         console.log(promoapp);
-        this.loginService.postApp(promoapp).subscribe(function (promoApp) {
+        this.promoAppService.postApp(promoapp).subscribe(function (promoApp) {
             console.log(promoApp);
             _this.router.navigateByUrl('home');
         });
@@ -434,7 +506,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  requests works!\n</p>\n"
+module.exports = "<p>\r\n  requests works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -479,69 +551,6 @@ var RequestsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/Components/submitted/submitted.component.css":
-/*!**************************************************************!*\
-  !*** ./src/app/Components/submitted/submitted.component.css ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/Components/submitted/submitted.component.html":
-/*!***************************************************************!*\
-  !*** ./src/app/Components/submitted/submitted.component.html ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>{{applicationType}}</h1>"
-
-/***/ }),
-
-/***/ "./src/app/Components/submitted/submitted.component.ts":
-/*!*************************************************************!*\
-  !*** ./src/app/Components/submitted/submitted.component.ts ***!
-  \*************************************************************/
-/*! exports provided: SubmittedComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubmittedComponent", function() { return SubmittedComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var SubmittedComponent = /** @class */ (function () {
-    function SubmittedComponent() {
-    }
-    SubmittedComponent.prototype.ngOnInit = function () {
-    };
-    SubmittedComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-submitted',
-            template: __webpack_require__(/*! ./submitted.component.html */ "./src/app/Components/submitted/submitted.component.html"),
-            styles: [__webpack_require__(/*! ./submitted.component.css */ "./src/app/Components/submitted/submitted.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], SubmittedComponent);
-    return SubmittedComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/Components/user.ts":
 /*!************************************!*\
   !*** ./src/app/Components/user.ts ***!
@@ -559,6 +568,58 @@ var User = /** @class */ (function () {
         this.id = id;
     }
     return User;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/Services/createaccount.service.ts":
+/*!***************************************************!*\
+  !*** ./src/app/Services/createaccount.service.ts ***!
+  \***************************************************/
+/*! exports provided: CreateAccountService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateAccountService", function() { return CreateAccountService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var httpOptions = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+        'Content-Type': 'application/json'
+    })
+};
+var CreateAccountService = /** @class */ (function () {
+    function CreateAccountService(http) {
+        this.http = http;
+        this.url = 'http://localhost:8081/PAMS/login';
+    }
+    CreateAccountService.prototype.getUsers = function () {
+        return this.http.get(this.url);
+    };
+    CreateAccountService.prototype.postlogin = function (user) {
+        return this.http.post(this.url, user, httpOptions);
+    };
+    CreateAccountService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], CreateAccountService);
+    return CreateAccountService;
 }());
 
 
@@ -654,6 +715,7 @@ var PromoAppService = /** @class */ (function () {
         return this.http.get(this.url);
     };
     PromoAppService.prototype.postApp = function (app) {
+        console.log('inside postApp of promoapp.service');
         return this.http.post(this.url, app, httpOptions);
     };
     PromoAppService = __decorate([
@@ -806,7 +868,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_app_status_app_status_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Components/app-status/app-status.component */ "./src/app/Components/app-status/app-status.component.ts");
 /* harmony import */ var _Components_requests_requests_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Components/requests/requests.component */ "./src/app/Components/requests/requests.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _Components_submitted_submitted_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Components/submitted/submitted.component */ "./src/app/Components/submitted/submitted.component.ts");
+/* harmony import */ var _Components_create_account_create_account_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Components/create-account/create-account.component */ "./src/app/Components/create-account/create-account.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -841,7 +903,7 @@ var AppModule = /** @class */ (function () {
                 _Components_application_application_component__WEBPACK_IMPORTED_MODULE_9__["ApplicationComponent"],
                 _Components_app_status_app_status_component__WEBPACK_IMPORTED_MODULE_10__["AppStatusComponent"],
                 _Components_requests_requests_component__WEBPACK_IMPORTED_MODULE_11__["RequestsComponent"],
-                _Components_submitted_submitted_component__WEBPACK_IMPORTED_MODULE_13__["SubmittedComponent"]
+                _Components_create_account_create_account_component__WEBPACK_IMPORTED_MODULE_13__["CreateAccountComponent"]
             ],
             imports: [
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"],
@@ -923,7 +985,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\jld92\Documents\1808-project2-JustinD-MattM\project2\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\revature\1808-project2-JustinD-MattM\project2\src\main.ts */"./src/main.ts");
 
 
 /***/ })
