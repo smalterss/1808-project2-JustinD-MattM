@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.pojos.PromoApp;
+import com.revature.pojos.User;
 import com.revature.services.PromoAppServices;
 
 @CrossOrigin(origins= "http://localhost:4200")
@@ -21,5 +22,7 @@ public class PromoAppController {
 	public void promoAppPost(@RequestBody PromoApp p, HttpSession sess) {
 		System.out.println("Inside of the POST method in Promo App Controller");
 		System.out.println(p);
+		p.setUserId(((User) sess.getAttribute("user")).getUserId());
+		pas.save(p);
 	}
 }

@@ -17,7 +17,7 @@ public class PromoApp {
 	private Integer id;
 	
 	@Column(name="userid")
-	private String userId;
+	private int userId;
 	
 	@Column(name="job")
 	private String job;
@@ -34,7 +34,7 @@ public class PromoApp {
 	@Column(name="storemanagerapproval")
 	private boolean storeManagerApproval;
 	
-	public PromoApp(Integer id, String userId, String job, String justification, boolean supevisorApproval,
+	public PromoApp(Integer id, Integer userId, String job, String justification, boolean supevisorApproval,
 			boolean managerApproval, boolean storeManagerApproval) {
 		super();
 		this.id = id;
@@ -82,11 +82,11 @@ public class PromoApp {
 		this.id = id;
 	}
 
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
