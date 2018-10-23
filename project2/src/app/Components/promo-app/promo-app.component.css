@@ -1,0 +1,21 @@
+.stuff {
+    background-color: white;
+    border-radius: 50px;
+    padding: 50px;
+    margin-left: 33%;
+    margin-right: 33%;
+    background: rgb(208, 240, 68);
+}
+
+.field {
+    margin: 5px;
+}
+
+.word {
+    color: blue;
+}
+
+#button {
+    margin: 10px;
+    background: rgb(0, 0, 0);    
+}

@@ -248,7 +248,7 @@ var CreateAccountComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "#button {\r\n    margin: 10px;\r\n    background: rgb(0, 0, 0);    \r\n}\r\n"
 
 /***/ }),
 
@@ -323,7 +323,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".stuff {\r\n    background-color: white;\r\n    border-radius: 50px;\r\n    padding: 50px;\r\n    margin-left: 33%;\r\n    margin-right: 33%;\r\n    background: rgb(208, 240, 68);\r\n}\r\n\r\n.field {\r\n    margin: 5px;\r\n}\r\n\r\n.word {\r\n    color: blue;\r\n}\r\n\r\n#button {\r\n    margin: 10px;\r\n    background: rgb(0, 0, 0);    \r\n}\r\n"
 
 /***/ }),
 
@@ -334,7 +334,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form action=\"login\" method=\"post\">\n  Email:<br> \n  <input type=\"text\" name=\"emailAddress\" placeholder=\"Email Address\" [(ngModel)]=\"emailAddress\"><br>\n  Password:<br>\n  <input type=\"password\" name=\"password\" placeholder=\"Password\" [(ngModel)]=\"password\">\n  <br>\n  <input type=\"Submit\" (click)=\"postLogin()\"/>\n  <br>\n  <input type=\"button\" value=\"Don't Have an Account? Click Here!\" (click)=\"makeAccount()\"/>\n</form>"
+module.exports = "<div class=\"stuff\">\r\n  <form action=\"login\" method=\"post\">\r\n    \r\n    <div id=\"word\">Email:</div>\r\n    <br> \r\n    <input id=\"field\" type=\"text\" name=\"emailAddress\" placeholder=\"Email Address\" [(ngModel)]=\"emailAddress\"><br>\r\n    <div id=\"word\">Password:</div>\r\n    <br>\r\n    <input id=\"field\" type=\"password\" name=\"password\" placeholder=\"Password\" [(ngModel)]=\"password\"/>\r\n    <br>\r\n    <input id=\"button\" class=\"btn btn-primary btn-lg\" type=\"Submit\" (click)=\"postLogin()\"/>\r\n    <br>\r\n    <input id=\"button\" class=\"btn btn-primary btn-lg\" type=\"button\" value=\"Don't Have an Account? Click Here!\" (click)=\"makeAccount()\"/>\r\n  </form>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -411,7 +411,7 @@ var LoginPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".stuff {\r\n    background-color: white;\r\n    border-radius: 50px;\r\n    padding: 50px;\r\n    margin-left: 33%;\r\n    margin-right: 33%;\r\n    background: rgb(208, 240, 68);\r\n}\r\n\r\n.field {\r\n    margin: 5px;\r\n}\r\n\r\n.word {\r\n    color: blue;\r\n}\r\n\r\n#button {\r\n    margin: 10px;\r\n    background: rgb(0, 0, 0);    \r\n}\r\n"
 
 /***/ }),
 
@@ -422,7 +422,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form action=\"submission\" method=\"post\">\r\n    Email Address:<br> \r\n    <input type=\"text\" name=\"emailAddress\" placeholder=\"Email Address\" [(ngModel)]=\"emailAddress\"><br>\r\n    Job Position Title:<br>\r\n    <input type=\"text\" name=\"job\" placeholder=\"Job Position Title\" [(ngModel)]=\"job\"><br> \r\n    Justification:<br>\r\n    <input type=\"text\" name=\"justification\" placeholder=\"Justification for applying\" [(ngModel)]=\"justification\">\r\n    <br>\r\n    <input type=\"submit\" (click)=\"postApp()\"/>\r\n</form>\r\n"
+module.exports = "<Div class=\"stuff\">\r\n<form action=\"submission\" method=\"post\">\r\n    Email Address:<br> \r\n    <input type=\"text\" name=\"emailAddress\" placeholder=\"Email Address\" [(ngModel)]=\"emailAddress\"><br>\r\n    Job Position Title:<br>\r\n    <input type=\"text\" name=\"job\" placeholder=\"Job Position Title\" [(ngModel)]=\"job\"><br> \r\n    Justification:<br>\r\n    <input type=\"text\" name=\"justification\" placeholder=\"Justification for applying\" [(ngModel)]=\"justification\">\r\n    <br>\r\n    <input type=\"submit\" (click)=\"postApp()\"/>\r\n</form>\r\n</Div>"
 
 /***/ }),
 
@@ -794,7 +794,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "div {\r\n    text-align: center;\r\n}"
 
 /***/ }),
 
@@ -805,7 +805,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:center\">\r\n  <h1>\r\n    Welcome to {{ title }}!\r\n </h1>\r\n\r\n <router-outlet></router-outlet>\r\n\r\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div>  \r\n<h1>\r\n    Welcome to {{ title }}!\r\n </h1>\r\n    <router-outlet></router-outlet>\r\n  </div>"
 
 /***/ }),
 

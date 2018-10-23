@@ -4,7 +4,7 @@
     padding: 50px;
     margin-left: 33%;
     margin-right: 33%;
-    background: rgb(63, 71, 64);
+    background: rgb(208, 240, 68);
 }
 
 .field {
@@ -17,5 +17,5 @@
 
 #button {
     margin: 10px;
-    background: rgb(211, 185, 71);    
+    background: rgb(0, 0, 0);    
 }

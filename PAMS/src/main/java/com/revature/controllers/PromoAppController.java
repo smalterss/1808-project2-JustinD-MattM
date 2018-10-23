@@ -22,7 +22,7 @@ public class PromoAppController {
 	public void promoAppPost(@RequestBody PromoApp p, HttpSession sess) {
 		System.out.println("Inside of the POST method in Promo App Controller");
 		System.out.println(p);
-		p.setUserId(((User) sess.getAttribute("user")).getUserId());
-		pas.save(p);
+//		p.setUserId(((User) sess.getAttribute("user")).getUserId());
+//		pas.save(p);
 	}
 }
